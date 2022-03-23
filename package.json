@@ -1,0 +1,18 @@
+{
+  "name": "defi-memory",
+  "version": "1.0.0",
+  "description": "Web application - Mmemory game",
+  "main": "script.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "E_Ickart",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "mocha": "^9.2.2"
+  }
+}
