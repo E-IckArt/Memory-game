@@ -2,4 +2,4 @@
 
 Jeu du Memory
 
-![Consignes du défi] (consignesDefi.png)
+<img src="consignesDefi.png" alt="Consignes du défi"/>
