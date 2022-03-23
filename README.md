@@ -8,9 +8,9 @@
 Contraintes techniques :  
 * Délai : Projet à réaliser pour le 4 Avril  
 * Langage de programmation :  
-     `* Languages obligatoires : HTML, CSS, JS`
-     `* Framework au choix`
-     `* Apprentissage des bases de Jquery nécessaire. AJAX ???` 
+     `* Languages obligatoires : HTML, CSS, JS`  
+     `* Framework au choix`  
+     `* Apprentissage des bases de Jquery nécessaire. AJAX ???`   
 
 Environnement de developpement :  
 * Visual Studio Code  
