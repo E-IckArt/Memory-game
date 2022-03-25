@@ -93,7 +93,7 @@ function unFlipCards() {
     lockBoard = false;
 
     resetBoard();
-  }, 900);
+  }, 1000);
 }
 
 // Reset variables using destructuring assignments
