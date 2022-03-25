@@ -14,8 +14,93 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   </head>
   <body>
-    <header></header>
-    <main></main>
+    <!-- START : Header -->
+    <header class="my-header">
+      <h1>Bienvenue au jeu du Memory</h1>
+      <p>Prêt pour commencer la partie ?</p>
+      <p>Clique sur le bouton bleu.</p>
+    </header>
+    <!-- STOP : Header -->
+    <main>
+      <!-- START : Timer Area -->
+      <section class="container--countdown">
+        <div class="container__div">
+          <img
+            class="container__div--icon"
+            src="img\icons8-hourglass.png"
+            alt="Hourglass icon"
+          />
+          <p class="container__div--p">
+            Temps restant : <span class="timeLeft">10s</span>
+          </p>
+        </div>
+
+        <div class="progress">
+          <div class="progress-inner"></div>
+        </div>
+        <button class="btn-start">C'est parti !</button>
+      </section>
+      <!-- STOP : Timer Area -->
+
+      <!-- START : Memory Game Area -->
+      <section class="container--memory-grid">
+        <sdiv class="memory-game">
+          <div class="memory-card" data-framework="child">
+            <img src="img\child.png" alt="child" class="front-face" />
+            <img src="img\zebra.png" alt="zebra" class="back-face" />
+          </div>
+          <div class="memory-card" data-framework="child">
+            <img src="img\child.png" alt="child" class="front-face" />
+            <img src="img\zebra.png" alt="zebra" class="back-face" />
+          </div>
+          <div class="memory-card" data-framework="dino">
+            <img src="img\dino.png" alt="dino" class="front-face" />
+            <img src="img\zebra.png" alt="zebra" class="back-face" />
+          </div>
+          <div class="memory-card" data-framework="dino">
+            <img src="img\dino.png" alt="dino" class="front-face" />
+            <img src="img\zebra.png" alt="zebra" class="back-face" />
+          </div>
+          <div class="memory-card" data-framework="dino 2">
+            <img src="img\dino2.png" alt="dino 2" class="front-face" />
+            <img src="img\zebra.png" alt="zebra" class="back-face" />
+          </div>
+          <div class="memory-card" data-framework="dino 2">
+            <img src="img\dino2.png" alt="dino 2" class="front-face" />
+            <img src="img\zebra.png" alt="zebra" class="back-face" />
+          </div>
+          <div class="memory-card" data-framework="parrot">
+            <img src="img\parrot.png" alt="parrot" class="front-face" />
+            <img src="img\zebra.png" alt="zebra" class="back-face" />
+          </div>
+          <div class="memory-card" data-framework="parrot">
+            <img src="img\parrot.png" alt="parrot" class="front-face" />
+            <img src="img\zebra.png" alt="zebra" class="back-face" />
+          </div>
+          <div class="memory-card" data-framework="penguin">
+            <img src="img\penguin.png" alt="penguin" class="front-face" />
+            <img src="img\zebra.png" alt="zebra" class="back-face" />
+          </div>
+          <div class="memory-card" data-framework="penguin">
+            <img src="img\penguin.png" alt="penguin" class="front-face" />
+            <img src="img\zebra.png" alt="zebra" class="back-face" />
+          </div>
+          <div class="memory-card" data-framework="sheepes">
+            <img src="img\sheepes.png" alt="sheepes" class="front-face" />
+            <img src="img\zebra.png" alt="zebra" class="back-face" />
+          </div>
+          <div class="memory-card" data-framework="sheepes">
+            <img src="img\sheepes.png" alt="sheepes" class="front-face" />
+            <img src="img\zebra.png" alt="zebra" class="back-face" />
+          </div>
+        </div>
+      </section>
+      <!-- STOP : Memory Game Area -->
+
+      <script src="./js/memory.js"></script>
+      <script src="./js/counter.js"></script>
+      <script src="./js/script.js"></script>
+    </main>
     <footer></footer>
 
     <!-- START : Scripts Jquery, puis Bootstrap et script.js-->
@@ -25,9 +110,11 @@
     <!-- STOP : Scripts Jquery, puis Bootstrap et script.js-->
     <!-- START : Noscript-->
     <noscript>
-      Ce navigateur ne supporte pas Javascript. Pour bénéficier de toutes les
-      fonctionnalités, activez Javascript dans votre navigateur.
+      Pour bénéficier de toutes les fonctionnalités, activez Javascript dans votre navigateur.
     </noscript>
     <!-- STOP : Noscript-->
   </body>
 </html>
+
+<!-- Attribution hourglassIcon -->
+<!-- <a target="_blank" href="https://icons8.com/icon/S0SaeASzu3D4/hourglass">Hourglass</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->

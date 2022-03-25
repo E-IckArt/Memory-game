@@ -1,45 +1,70 @@
-/* 
-CountDown Timer Style
-*/
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.container--countdown {
-  width: 70%;
-  margin: auto;
-  color: white;
-  background-color: dodgerblue;
+html {
+  width: 100%;
+  height: 100%;
+}
+
+/*
+*
+Body
+*
+*/
+
+body {
+  width: 100%;
+  height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  /* background-color: blue; */
+  /* background: url(../img/background/park.png); */
+  background-image: url(../img/background/baby-room.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 
+CountDown Timer Style
+*/
+
+.container--countdown {
+  width: 60%;
+  margin: 1.5rem auto 0;
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.61);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container__div {
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: 20px;
+  column-gap: 1.2rem;
 }
 
-h1,
 .container__div--p,
 .container__div--icon,
-.progress,
-.btn-start {
+.progress {
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
-h1 {
-  font-size: 40px;
-}
-
-p {
-  font-size: 20px;
+.container__div--icon {
+  height: 40px;
+  width: auto;
 }
 
 .progress,
@@ -49,7 +74,7 @@ p {
 
 .progress {
   width: 80%;
-  height: 20px;
+  height: 15px;
   /* background-color: lightgrey; */
   background: rgb(168, 3, 3);
   background: linear-gradient(
@@ -87,52 +112,59 @@ p {
 }
 
 .btn-start {
-  padding: 20px;
-  width: 30%;
-  font-size: 20px;
-  background-color: oldlace;
+  padding: 10px 15px;
+  width: 20%;
+  background-color: #78a4e3;
   border: none;
   border-radius: 10px;
   outline: none;
+  font-weight: 600;
 }
 
-/* 
-Memory board Style
-*/
+/* -----------------          Memory board Style          ----------------- */
 
 /*
 *
-Body
+START : Memory Game Area
 *
 */
 
-body {
-  height: 100vh;
+.container--memory-grid {
+  width: 60%;
+  height: 100%;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  background-color: blue;
+  justify-content: center;
 }
 
-/*
-  *
-  Memory Game Area
-  *
-  */
-
 .memory-game {
-  width: 640px;
-  height: 640px;
+  width: 100%;
+  height: 90%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
 }
 
+@media screen and (min-width: 1440px) {
+  .memory-game {
+    width: 550px;
+    height: 550px;
+    margin: 0 auto;
+  }
+}
 /*
-  *
-  Memory Cards
-  *
-  */
+*
+STOP : Memory Game Area
+*
+*/
+
+/*
+*
+START : Memory Cards
+*
+*/
 
 .memory-card {
   width: calc(25% - 10px);
@@ -161,15 +193,27 @@ body {
   object-position: center;
   padding: 20px;
   position: absolute;
-  background-color: rgb(204, 207, 209);
+
   border-radius: 5px;
   backface-visibility: hidden;
 }
 
 .front-face {
   transform: rotateY(180deg);
+  background-color: rgb(236, 232, 232);
+}
+
+.back-face {
+  background-color: rgba(236, 232, 232, 0.61);
+  border: solid 2px black;
 }
 
 .back-face:hover {
   box-shadow: 0px 0px 10px 3px #76a13d inset;
 }
+
+/*
+*
+STOP : Memory Cards
+*
+*/
