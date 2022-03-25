@@ -1,0 +1,175 @@
+/* 
+CountDown Timer Style
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container--countdown {
+  width: 70%;
+  margin: auto;
+  color: white;
+  background-color: dodgerblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container__div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
+h1,
+.container__div--p,
+.container__div--icon,
+.progress,
+.btn-start {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.progress,
+.progress-inner {
+  border-radius: 15px;
+}
+
+.progress {
+  width: 80%;
+  height: 20px;
+  /* background-color: lightgrey; */
+  background: rgb(168, 3, 3);
+  background: linear-gradient(
+    90deg,
+    rgba(168, 3, 3, 1) 0%,
+    rgba(140, 255, 0, 1) 100%
+  );
+  position: relative;
+}
+
+.progress-inner {
+  /* background-color: green; */
+  background-color: darkslategrey;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.progress-inner.animate {
+  animation-timing-function: linear;
+  animation-duration: 10s;
+  animation-name: countdown;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+
+@keyframes countdown {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0%;
+  }
+}
+
+.btn-start {
+  padding: 20px;
+  width: 30%;
+  font-size: 20px;
+  background-color: oldlace;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+/* 
+Memory board Style
+*/
+
+/*
+*
+Body
+*
+*/
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+}
+
+/*
+  *
+  Memory Game Area
+  *
+  */
+
+.memory-game {
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+/*
+  *
+  Memory Cards
+  *
+  */
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.memory-card :active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: 20px;
+  position: absolute;
+  background-color: rgb(204, 207, 209);
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+.back-face:hover {
+  box-shadow: 0px 0px 10px 3px #76a13d inset;
+}
