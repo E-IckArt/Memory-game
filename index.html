@@ -5,25 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Défi Memory</title>
-    <link
+    <!-- <link
       rel="stylesheet"
       href="node_modules\bootstrap\dist\css\bootstrap.min.css"
       type="text/css"
-    />
+    /> -->
     <link rel="stylesheet" href="./css/style.css" type="text/css" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   </head>
   <body>
     <!-- START : Header -->
     <header class="my-header">
+      <div class="my-header--greeting">
       <h1>Bienvenue au jeu du Memory</h1>
       <p>Prêt pour commencer la partie ?</p>
       <p>Clique sur le bouton bleu.</p>
-    </header>
-    <!-- STOP : Header -->
-    <main>
+    </div>
       <!-- START : Timer Area -->
-      <section class="container--countdown">
+      <div class="container--countdown">
         <div class="container__div">
           <img
             class="container__div--icon"
@@ -34,14 +33,16 @@
             Temps restant : <span class="timeLeft">10s</span>
           </p>
         </div>
-
+  
         <div class="progress">
           <div class="progress-inner"></div>
         </div>
-        <button class="btn-start">C'est parti !</button>
-      </section>
+        <button class="btn-start">START</button>
+      </div>
       <!-- STOP : Timer Area -->
-
+    </header>
+    <!-- STOP : Header -->
+    <main class="my-main">
       <!-- START : Memory Game Area -->
       <section class="container--memory-grid">
         <sdiv class="memory-game">
@@ -96,10 +97,17 @@
         </div>
       </section>
       <!-- STOP : Memory Game Area -->
-
-      
     </main>
-    <footer></footer>
+    <!-- STOP : Main -->
+
+    <!-- START : Footer -->
+    <footer class="my-footer" >
+      <ul class="my-footer__ul--inline">
+        <li>Emi_Ickart</li>
+        <li>Mars 2022</li>
+      </ul>
+    </footer>
+    <!-- STOP: Footer -->
 
     <!-- START : Scripts Jquery, puis Bootstrap et script.js-->
     <script src="node_modules\jquery\dist\jquery.min.js"></script>

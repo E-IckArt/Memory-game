@@ -24,7 +24,7 @@ body {
   align-items: center;
   margin: auto;
   /* background-color: blue; */
-  background-image: url(../img/background/baby-room.jpg);
+  background-image: url(../img/baby-room.jpg);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,7 +35,7 @@ CountDown Timer Style
 */
 
 .container--countdown {
-  width: 60%;
+  width: 100%;
   margin: 1.5rem auto 0;
   padding: 1rem;
   font-size: 1.5rem;
@@ -112,7 +112,7 @@ CountDown Timer Style
 
 .btn-start {
   padding: 10px 15px;
-  width: 20%;
+  width: 30%;
   background-color: #78a4e3;
   border: none;
   border-radius: 10px;
@@ -127,6 +127,10 @@ CountDown Timer Style
 START : Memory Game Area
 *
 */
+.my-main {
+  width: 100%;
+  height: 100%;
+}
 
 .container--memory-grid {
   width: 60%;
@@ -216,3 +220,40 @@ START : Memory Cards
 STOP : Memory Cards
 *
 */
+
+/*
+*
+* START : my-header
+*
+*/
+
+.my-header {
+}
+
+/*
+*
+* STOP : my-header
+*
+*/
+
+/*
+*
+START : Footer
+*
+*/
+
+.my-footer {
+  margin: 10px 0;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.my-footer__ul--inline {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+}
+
+.my-footer ul li {
+  list-style-type: none;
+}
