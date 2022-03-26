@@ -23,28 +23,49 @@ body {
   justify-content: center;
   align-items: center;
   margin: auto;
-  /* background-color: blue; */
+  background-color: #78a4e3;
   background-image: url(../img/baby-room.jpg);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-/* 
-CountDown Timer Style
-*/
+/* -----------------          START : Header style          ----------------- */
 
-.container--countdown {
-  width: 100%;
-  margin: 1.5rem auto 0;
+.my-header {
+  width: 85%;
+  margin: 1rem auto 0;
   padding: 1rem;
-  font-size: 1.5rem;
   color: black;
-  background-color: rgba(255, 255, 255, 0.61);
+  background-color: rgba(255, 255, 255, 0.65);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media screen and (min-width: 1440px) {
+  .my-header {
+    margin-top: 50px;
+    height: 20%;
+    justify-content: space-evenly;
+  }
+}
+
+.my-header--greeting {
+  font-size: medium;
+  text-align: center;
+  padding-bottom: 5px;
+  display: none;
+}
+
+/* 
+CountDown Container Style
+*/
+
+.container--countdown {
+  width: 90%;
+  /* display: none; */
 }
 
 .container__div {
@@ -59,34 +80,94 @@ CountDown Timer Style
 .progress {
   font-weight: 600;
   margin-bottom: 1rem;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .my-header {
+    width: 70%;
+  }
+
+  .container__div--p {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .my-header {
+    width: 70%;
+  }
+
+  .container__div {
+    margin-bottom: 2rem;
+  }
+
+  .container__div--p {
+    font-size: 3.5rem;
+  }
 }
 
 .container__div--icon {
-  height: 40px;
+  height: 30px;
   width: auto;
 }
 
+@media screen and (min-width: 1024px) {
+  .container__div--icon {
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .container__div--icon {
+    height: 90px;
+  }
+}
+
+/*
+*
+* START : Progress Bar
+*
+*/
+
 .progress,
 .progress-inner {
-  border-radius: 15px;
+  border-radius: 15px !important;
 }
 
 .progress {
-  width: 80%;
+  width: 100%;
   height: 15px;
-  /* background-color: lightgrey; */
-  background: rgb(168, 3, 3);
+  background: rgb(148, 6, 6);
   background: linear-gradient(
     90deg,
-    rgba(168, 3, 3, 1) 0%,
-    rgba(140, 255, 0, 1) 100%
+    rgba(148, 6, 6, 1) 0%,
+    rgba(224, 110, 3, 1) 51%,
+    rgba(33, 167, 8, 1) 100%
   );
   position: relative;
 }
 
+@media screen and (min-width: 2560px) {
+  .progress,
+  .progress-inner {
+    border-radius: 20px !important;
+  }
+
+  .progress {
+    height: 40px;
+    border: solid 3px whitesmoke;
+  }
+}
+
 .progress-inner {
-  /* background-color: green; */
-  background-color: darkslategrey;
+  background: rgb(2, 0, 24);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 24, 1) 0%,
+    rgba(177, 177, 193, 1) 100%
+  );
   position: absolute;
   width: 100%;
   height: 100%;
@@ -110,35 +191,78 @@ CountDown Timer Style
   }
 }
 
+/*
+*
+* STOP : Progress Bar
+*
+*/
+
+/* 
+*
+* START : Button Style
+*
+*/
+
 .btn-start {
   padding: 10px 15px;
-  width: 30%;
+  width: 40%;
   background-color: #78a4e3;
   border: none;
   border-radius: 10px;
   outline: none;
   font-weight: 600;
+  cursor: pointer;
 }
 
-/* -----------------          Memory board Style          ----------------- */
+@media screen and (min-width: 1024px) {
+  .btn-start {
+    width: 25%;
+  }
+}
 
-/*
+@media screen and (min-width: 2560px) {
+  .btn-start {
+    font-size: 3rem;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+/* 
 *
-START : Memory Game Area
+* STOP : Button Style
 *
 */
+
+/* ----------------- END : Header style ----------------- */
+
+/* ----------------- Memory board Style ----------------- */
+
+/* * START : Memory Game Area * */
 .my-main {
   width: 100%;
   height: 100%;
 }
 
+@media screen and (min-width: 1440px) {
+  .my-main {
+    height: 80%;
+  }
+}
+
 .container--memory-grid {
-  width: 60%;
+  width: 90%;
   height: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .container--memory-grid {
+    width: 60%;
+  }
 }
 
 .memory-game {
@@ -152,11 +276,24 @@ START : Memory Game Area
 
 @media screen and (min-width: 1440px) {
   .memory-game {
-    width: 550px;
-    height: 550px;
+    width: 600px;
+    height: 530px;
     margin: 0 auto;
   }
 }
+
+@media screen and (min-width: 2560px) {
+  .container--memory-grid {
+    width: 70%;
+  }
+
+  .memory-game {
+    width: 1100px;
+    height: 1100px;
+    margin: 0 auto;
+  }
+}
+
 /*
 *
 STOP : Memory Game Area
@@ -194,11 +331,24 @@ START : Memory Cards
   height: 100%;
   object-fit: contain;
   object-position: center;
-  padding: 20px;
+  padding: 3px;
   position: absolute;
-
   border-radius: 5px;
   backface-visibility: hidden;
+}
+
+@media screen and (min-width: 425px) {
+  .front-face,
+  .back-face {
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .front-face,
+  .back-face {
+    padding: 20px;
+  }
 }
 
 .front-face {
@@ -207,7 +357,7 @@ START : Memory Cards
 }
 
 .back-face {
-  background-color: rgba(236, 232, 232, 0.61);
+  background-color: rgba(236, 232, 232, 0.65);
   border: solid 2px black;
 }
 
@@ -223,37 +373,45 @@ STOP : Memory Cards
 
 /*
 *
-* START : my-header
-*
-*/
-
-.my-header {
-}
-
-/*
-*
-* STOP : my-header
-*
-*/
-
-/*
-*
 START : Footer
 *
 */
 
 .my-footer {
-  margin: 10px 0;
   font-size: 1rem;
   font-weight: 400;
+  /* background-color: rgba(255, 255, 255, 0.7); */
+  border-radius: 15px;
 }
 
 .my-footer__ul--inline {
   display: flex;
   flex-direction: row;
   column-gap: 20px;
+  margin: 10px 0;
+  padding: 0 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
 }
 
 .my-footer ul li {
   list-style-type: none;
+}
+
+@media screen and (min-width: 1440px) {
+  .my-footer {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .my-footer {
+    font-size: 1.5rem;
+  }
+
+  .my-footer__ul--inline {
+    flex-direction: column;
+    column-gap: 300px;
+    margin: auto;
+  }
 }

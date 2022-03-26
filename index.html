@@ -5,22 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Défi Memory</title>
-    <!-- <link
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
       rel="stylesheet"
       href="node_modules\bootstrap\dist\css\bootstrap.min.css"
       type="text/css"
-    /> -->
-    <link rel="stylesheet" href="./css/style.css" type="text/css" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    />
   </head>
   <body>
     <!-- START : Header -->
     <header class="my-header">
       <div class="my-header--greeting">
-      <h1>Bienvenue au jeu du Memory</h1>
-      <p>Prêt pour commencer la partie ?</p>
-      <p>Clique sur le bouton bleu.</p>
-    </div>
+        <h1>Bienvenue au jeu du Memory</h1>
+      </div>
       <!-- START : Timer Area -->
       <div class="container--countdown">
         <div class="container__div">
@@ -30,22 +28,22 @@
             alt="Hourglass icon"
           />
           <p class="container__div--p">
-            Temps restant : <span class="timeLeft">10s</span>
+            Temps : <span class="timeLeft">10s</span>
           </p>
         </div>
-  
+
         <div class="progress">
           <div class="progress-inner"></div>
         </div>
-        <button class="btn-start">START</button>
       </div>
+      <button class="btn-start">JOUER</button>
       <!-- STOP : Timer Area -->
     </header>
     <!-- STOP : Header -->
     <main class="my-main">
       <!-- START : Memory Game Area -->
       <section class="container--memory-grid">
-        <sdiv class="memory-game">
+        <div class="memory-game">
           <div class="memory-card" data-framework="child">
             <img src="img\child.png" alt="child" class="front-face" />
             <img src="img\zebra.png" alt="zebra" class="back-face" />
@@ -101,9 +99,9 @@
     <!-- STOP : Main -->
 
     <!-- START : Footer -->
-    <footer class="my-footer" >
+    <footer class="my-footer">
       <ul class="my-footer__ul--inline">
-        <li>Emi_Ickart</li>
+        <li>Emi Ickart</li>
         <li>Mars 2022</li>
       </ul>
     </footer>
@@ -118,7 +116,8 @@
     <!-- STOP : Scripts Jquery, puis Bootstrap et script.js-->
     <!-- START : Noscript-->
     <noscript>
-      Pour bénéficier de toutes les fonctionnalités, activez Javascript dans votre navigateur.
+      Pour bénéficier de toutes les fonctionnalités, activez Javascript dans
+      votre navigateur.
     </noscript>
     <!-- STOP : Noscript-->
   </body>
