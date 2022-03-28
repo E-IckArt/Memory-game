@@ -2,7 +2,16 @@
 const cards = document.querySelectorAll('.memory-card');
 console.log(cards);
 
+// Select all flipped cards and stocks them in a variable, as a list.
 const flipClass = document.querySelectorAll('.flip');
+
+// Select Heading message to display
+const displayGreeting = document.querySelector('.my-header--greeting');
+const displayTimer = document.querySelector('.container--countdown');
+const displayEndGameMessage = document.querySelector(
+  '.container--endgame-message'
+);
+const endGameMessage = document.querySelector('.endgame-message');
 
 let hasFlippedCard = false; // No card is already flipped
 let lockBoard = false; // Avoid flipping more than 2 cards
@@ -17,6 +26,13 @@ let secondCard;
 *
 */
 function startGame() {
+  // Disable Start Button
+  btnStart.removeEventListener('click', startGame);
+  btnStart.style.backgroundColor = 'rgba(177, 177, 193, 1)';
+  // Change displayed message
+  displayGreeting.style.display = 'none';
+  displayTimer.style.display = 'block';
+  displayEndGameMessage.style.display = 'none';
   shuffle();
   //Start couterdown timer defined in file counter.js
   startCountDown();
@@ -77,7 +93,6 @@ function disableCards() {
   console.log(secondCard.dataset.framework);
 
   // Check for win
-
   checkForWin();
 
   resetBoard();
@@ -103,10 +118,13 @@ function resetBoard() {
 }
 
 function checkForWin() {
+  //TODO - Bugfix Le tableau n'est plus mis à jour
   console.log(flipClass.length);
 
   if (flipClass.length === 12) {
     setTimeout(() => {
+      endGameMessage.textContent = 'BRAVO ! TU AS GAGNE !';
+      endGameMessage.style.color = 'rgba(33, 167, 8, 1)';
       alert(`Congrat's ! You win this game !`);
     }, 1300);
     endGame();
@@ -119,7 +137,10 @@ const endGame = () => {
     card.classList.remove('flip');
   });
   progressBar.classList.remove('animate');
-  console.log('Fin de la partie. Voulez vous rejouer ?');
+  btnStart.textContent = 'REJOUER';
+  btnStart.style.backgroundColor = '#78a4e3';
+  btnStart.addEventListener('click', startGame);
+  console.log('Fin de la partie. Rejouer ?');
 };
 
 /*

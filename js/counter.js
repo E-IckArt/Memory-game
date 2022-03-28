@@ -10,9 +10,7 @@ const progressBar = document.querySelector('.progress-inner');
 
 /* Manage the timer and displays remaining time */
 function startCountDown() {
-  btnStart.removeEventListener('click', startGame);
-
-  let interval = 10;
+  let interval = 20;
   console.log(`Interval début : ${interval}`);
 
   progressBar.style.width = '100%';
@@ -24,9 +22,16 @@ function startCountDown() {
       timeLeft.textContent = interval + 's';
     } else {
       clearInterval(countDown);
-      timeLeft.textContent = 'Game Over';
-      endGame(); // Function in file memory.js
-      btnStart.addEventListener('click', startGame);
+      timeLeft.textContent = 'écoulé';
+      setTimeout(() => {
+        displayTimer.style.display = 'none';
+        displayEndGameMessage.style.display = 'block';
+        endGameMessage.textContent = 'OH NON ! TU AS PERDU !';
+        endGameMessage.style.color = 'rgba(148, 6, 6, 1)';
+
+        endGame(); // Function in file memory.js
+      }, 1500);
+
       console.log(`Interval fin : ${interval}`);
     }
   }, 1000);

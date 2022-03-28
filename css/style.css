@@ -56,7 +56,7 @@ body {
   font-size: medium;
   text-align: center;
   padding-bottom: 5px;
-  display: none;
+  /* display: none; */
 }
 
 /* 
@@ -65,7 +65,7 @@ CountDown Container Style
 
 .container--countdown {
   width: 90%;
-  /* display: none; */
+  display: none;
 }
 
 .container__div {
@@ -157,7 +157,7 @@ CountDown Container Style
 
   .progress {
     height: 40px;
-    border: solid 3px whitesmoke;
+    border: solid 3px #f5f5f5;
   }
 }
 
@@ -175,7 +175,7 @@ CountDown Container Style
 
 .progress-inner.animate {
   animation-timing-function: linear;
-  animation-duration: 10s;
+  animation-duration: 20s;
   animation-name: countdown;
   animation-iteration-count: 1;
   animation-direction: normal;
@@ -195,6 +195,21 @@ CountDown Container Style
 *
 * STOP : Progress Bar
 *
+*/
+
+/* 
+* START : EndGame Message
+*/
+
+.container--endgame-message {
+  font-size: medium;
+  text-align: center;
+  padding-bottom: 5px;
+  display: none;
+}
+
+/* 
+* STOP : EndGame Message
 */
 
 /* 
@@ -335,6 +350,7 @@ START : Memory Cards
   position: absolute;
   border-radius: 5px;
   backface-visibility: hidden;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 425px) {
@@ -353,7 +369,7 @@ START : Memory Cards
 
 .front-face {
   transform: rotateY(180deg);
-  background-color: rgb(236, 232, 232);
+  background-color: #ece8e8;
 }
 
 .back-face {
@@ -362,7 +378,7 @@ START : Memory Cards
 }
 
 .back-face:hover {
-  box-shadow: 0px 0px 10px 3px #76a13d inset;
+  box-shadow: 0px 0px 15px 6px #ffae1e inset;
 }
 
 /*
