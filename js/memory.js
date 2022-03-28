@@ -62,12 +62,9 @@ function flipCards() {
 
     return; // Stop running the if statement there if the condition is true
   }
-  //console.log({ hasFlippedCard, firstCard });
 
   // second click
   secondCard = this;
-
-  //console.log({ hasFlippedCard, firstCard, secondCard });
   checkIfMatch();
 }
 
