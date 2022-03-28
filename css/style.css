@@ -89,6 +89,11 @@ CountDown Container Style
     width: 70%;
   }
 
+  .my-header--greeting,
+  .container--countdown {
+    height: 84px;
+  }
+
   .container__div--p {
     font-size: 1.5rem;
   }
@@ -204,8 +209,15 @@ CountDown Container Style
 .container--endgame-message {
   font-size: medium;
   text-align: center;
-  padding-bottom: 5px;
+  height: 78px;
+  padding: 20px 0 5px;
   display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .container--endgame-message {
+    height: 84px;
+  }
 }
 
 /* 
@@ -220,7 +232,7 @@ CountDown Container Style
 
 .btn-start {
   padding: 10px 15px;
-  width: 40%;
+  min-width: 40%;
   background-color: #78a4e3;
   border: none;
   border-radius: 10px;
@@ -229,11 +241,11 @@ CountDown Container Style
   cursor: pointer;
 }
 
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
   .btn-start {
-    width: 25%;
+    min-width: 25%;
   }
-}
+} */
 
 @media screen and (min-width: 2560px) {
   .btn-start {

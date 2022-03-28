@@ -2,9 +2,6 @@
 const cards = document.querySelectorAll('.memory-card');
 console.log(cards);
 
-// Select all flipped cards and stocks them in a variable, as a list.
-const flipClass = document.querySelectorAll('.flip');
-
 // Select Heading message to display
 const displayGreeting = document.querySelector('.my-header--greeting');
 const displayTimer = document.querySelector('.container--countdown');
@@ -12,13 +9,12 @@ const displayEndGameMessage = document.querySelector(
   '.container--endgame-message'
 );
 const endGameMessage = document.querySelector('.endgame-message');
+const winningMessage = 'BRAVO ! TU AS GAGNE !';
 
 let hasFlippedCard = false; // No card is already flipped
 let lockBoard = false; // Avoid flipping more than 2 cards
 let firstCard;
 let secondCard;
-
-// startGame();
 
 /*
 *
@@ -33,6 +29,7 @@ function startGame() {
   displayGreeting.style.display = 'none';
   displayTimer.style.display = 'block';
   displayEndGameMessage.style.display = 'none';
+
   shuffle();
   //Start couterdown timer defined in file counter.js
   startCountDown();
@@ -118,15 +115,20 @@ function resetBoard() {
 }
 
 function checkForWin() {
-  //TODO - Bugfix Le tableau n'est plus mis à jour
+  // Select all flipped cards and stocks them in a variable, as a list.
+  let flipClass = document.querySelectorAll('.flip');
   console.log(flipClass.length);
+  let hasWin = flipClass.length === 12;
 
-  if (flipClass.length === 12) {
+  if (hasWin) {
     setTimeout(() => {
-      endGameMessage.textContent = 'BRAVO ! TU AS GAGNE !';
+      clearInterval(countDown);
+      timeLeft.textContent = '40 s';
+      displayTimer.style.display = 'none';
+      displayEndGameMessage.style.display = 'block';
+      endGameMessage.textContent = winningMessage;
       endGameMessage.style.color = 'rgba(33, 167, 8, 1)';
-      alert(`Congrat's ! You win this game !`);
-    }, 1300);
+    }, 1000);
     endGame();
   }
 }
@@ -134,7 +136,9 @@ function checkForWin() {
 const endGame = () => {
   cards.forEach((card) => {
     card.removeEventListener('click', flipCards);
-    card.classList.remove('flip');
+    setTimeout(() => {
+      card.classList.remove('flip');
+    }, 2000);
   });
   progressBar.classList.remove('animate');
   btnStart.textContent = 'REJOUER';
