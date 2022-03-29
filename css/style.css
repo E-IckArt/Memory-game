@@ -180,7 +180,7 @@ CountDown Container Style
 
 .progress-inner.animate {
   animation-timing-function: linear;
-  animation-duration: 20s;
+  /* animation-duration: 20s; */
   animation-name: countdown;
   animation-iteration-count: 1;
   animation-direction: normal;

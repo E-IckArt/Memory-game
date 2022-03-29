@@ -12,10 +12,11 @@ let countDown;
 
 /* Manage the timer and displays remaining time */
 function startCountDown() {
-  interval = 5;
+  interval = 10;
   console.log(`Interval début : ${interval}`);
 
   progressBar.style.width = '100%';
+  progressBar.style.animationDuration = `${interval}s`;
   // Start CSS Animation
   progressBar.classList.add('animate');
 
