@@ -16,6 +16,8 @@ function startCountDown() {
   console.log(`Interval début : ${interval}`);
 
   progressBar.style.width = '100%';
+  // Start CSS Animation
+  progressBar.classList.add('animate');
 
   countDown = setInterval(() => {
     interval--;
@@ -25,6 +27,7 @@ function startCountDown() {
     } else {
       clearInterval(countDown);
       timeLeft.textContent = '0';
+      progressBar.classList.remove('animate');
       setTimeout(() => {
         displayGameLosedMsg();
         endGame(); // Function in file memory.js
@@ -35,16 +38,12 @@ function startCountDown() {
   }, 1000);
 }
 
-/* Start CSS Animation*/
-function changeProgressBar() {
-  progressBar.classList.add('animate'); //TODO - This function looks to be useless ? Doesn't it ?
-}
-
 /*
 *
  STOP : FUNCTIONS FOR TIMER
 *
 */
+
 function displayGameLosedMsg() {
   displayTimer.style.display = 'none';
   displayEndGameMessage.style.display = 'block';

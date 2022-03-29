@@ -33,7 +33,6 @@ function startGame() {
   shuffle();
   //Start couterdown timer defined in file counter.js
   startCountDown();
-  changeProgressBar();
   console.log("c'est parti !");
   // For each card of the cards list, flip the card
   cards.forEach((card) => card.addEventListener('click', flipCards));
@@ -126,6 +125,7 @@ function checkForWin() {
       endGameMessage.textContent = winningMessage;
       endGameMessage.style.color = 'rgba(33, 167, 8, 1)';
     }, 1000);
+    progressBar.classList.remove('animate');
     endGame();
   }
 }
@@ -137,7 +137,7 @@ const endGame = () => {
       card.classList.remove('flip');
     }, 2000);
   });
-  progressBar.classList.remove('animate');
+
   btnStart.textContent = 'REJOUER';
   btnStart.style.backgroundColor = '#78a4e3';
   btnStart.addEventListener('click', startGame);
