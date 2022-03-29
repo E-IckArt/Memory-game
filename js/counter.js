@@ -12,9 +12,10 @@ let countDown;
 
 /* Manage the timer and displays remaining time */
 function startCountDown() {
-  interval = 10;
+  interval = 40;
   console.log(`Interval début : ${interval}`);
 
+  timeLeft.textContent = interval;
   progressBar.style.width = '100%';
   progressBar.style.animationDuration = `${interval}s`;
   // Start CSS Animation
@@ -24,10 +25,10 @@ function startCountDown() {
     interval--;
 
     if (interval > 0) {
-      timeLeft.textContent = interval + ' s';
+      timeLeft.textContent = interval;
     } else {
       clearInterval(countDown);
-      timeLeft.textContent = '0';
+      timeLeft.textContent = 0;
       progressBar.classList.remove('animate');
       setTimeout(() => {
         displayGameLosedMsg();

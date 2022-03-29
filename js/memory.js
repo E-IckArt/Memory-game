@@ -119,7 +119,6 @@ function checkForWin() {
   if (hasWin) {
     setTimeout(() => {
       clearInterval(countDown);
-      timeLeft.textContent = '40 s';
       displayTimer.style.display = 'none';
       displayEndGameMessage.style.display = 'block';
       endGameMessage.textContent = winningMessage;
