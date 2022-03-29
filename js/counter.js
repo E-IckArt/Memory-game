@@ -17,6 +17,7 @@ function startCountDown() {
 
   timeLeft.textContent = interval;
   progressBar.style.width = '100%';
+  // Set animation duration
   progressBar.style.animationDuration = `${interval}s`;
   // Start CSS Animation
   progressBar.classList.add('animate');
