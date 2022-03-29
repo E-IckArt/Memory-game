@@ -28,7 +28,7 @@ function startCountDown() {
       setTimeout(() => {
         displayGameLosedMsg();
         endGame(); // Function in file memory.js
-      }, 1200);
+      }, 1500);
 
       console.log(`Interval fin : ${interval}`);
     }
