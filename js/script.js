@@ -38,7 +38,7 @@ $(function ($) {
 
   /* Manage the timer and displays remaining time */
   function startCountDown() {
-    interval = 40;
+    interval = 10;
     console.log(`Interval début : ${interval}`);
 
     $('.timeLeft').text(interval);
@@ -57,9 +57,9 @@ $(function ($) {
         clearInterval(countDown);
         $('.timeLeft').text(0);
         $('.progress-inner').removeClass('animate');
+        endGame(); // Function in file memory.js
         setTimeout(() => {
           displayGameLosedMsg();
-          endGame(); // Function in file memory.js
         }, 1500);
 
         console.log(`Interval fin : ${interval}`);
@@ -76,8 +76,9 @@ $(function ($) {
   function displayGameLosedMsg() {
     displayTimer.css('display', 'none');
     displayEndGameMessage.css('display', 'block');
-    endGameMessage.text('OH NON ! TU AS PERDU !');
-    endGameMessage.css('color', 'rgba(148, 6, 6, 1)');
+    endGameMessage
+      .text('OH NON ! TU AS PERDU !')
+      .css('color', 'rgba(148, 6, 6, 1)');
   }
 
   /*
@@ -118,7 +119,8 @@ $(function ($) {
   function startGame() {
     // Disable Start Button
     $('.btn-start').off('click', startGame);
-    btnStart.css('backgroundColor', 'rgba(177, 177, 193, 1)');
+    btnStart.css('backgroundColor', 'var(--grey-button)');
+    btnStart.css('cursor', 'not-allowed');
     // Change displayed message
     displayGreeting.css('display', 'none');
     displayTimer.css('display', 'block');
@@ -231,6 +233,7 @@ Generate a randow number for each card. Then order card by increasing order.*/
     });
 
     btnStart.text('REJOUER').css('backgroundColor', 'var(--color-blue)');
+    btnStart.css('cursor', 'pointer');
     btnStart.on('click', startGame);
     console.log('Fin de la partie. Rejouer ?');
   };

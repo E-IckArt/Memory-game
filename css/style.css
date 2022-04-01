@@ -1,6 +1,8 @@
 :root {
   --color-blue: #78a4e3;
   --color-white-opacity-07: rgba(255, 255, 255, 0.7);
+  --box-shadow: 0px 0px 8px 4px #ffae1e inset;
+  --grey-button: rgba(177, 177, 193, 1);
 }
 
 * {
@@ -267,7 +269,7 @@ START : Memory Cards
 }
 
 .back-face:hover {
-  box-shadow: 0px 0px 15px 6px #ffae1e inset;
+  box-shadow: var(--box-shadow);
 }
 
 /*
