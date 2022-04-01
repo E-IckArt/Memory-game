@@ -57,10 +57,10 @@ $(function ($) {
         clearInterval(countDown);
         $('.timeLeft').text(0);
         $('.progress-inner').removeClass('animate');
-        endGame(); // Function in file memory.js
         setTimeout(() => {
+          endGame(); // Function in file memory.js
           displayGameLosedMsg();
-        }, 1500);
+        }, 600);
 
         console.log(`Interval fin : ${interval}`);
       }
