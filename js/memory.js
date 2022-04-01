@@ -4,7 +4,6 @@
 const btnStart = $('.btn-start');
 // Select all cards and stocks them in a variable, as a list.
 const cards = $('.memory-card');
-console.log(cards);
 
 // Select Heading message to display
 const displayGreeting = $('.my-header--greeting');
@@ -40,7 +39,6 @@ function startGame() {
   shuffle();
   //Start couterdown timer defined in file counter.js
   startCountDown();
-  console.log("c'est parti !");
   // For each card of the cards list, flip the card
   cards.each(function () {
     $(this).on('click', flipCards);
@@ -95,9 +93,6 @@ function checkIfMatch() {
 function disableCards() {
   firstCard.off('click', flipCards);
   secondCard.off('click', flipCards);
-  console.log("It's a match !");
-  console.log(firstCard.data('framework'));
-  console.log(secondCard.data('framework'));
 
   // Check for win
   checkForWin();
@@ -129,7 +124,6 @@ function resetBoard() {
 function checkForWin() {
   // Select all flipped cards and stocks them in a variable, as a list.
   let flipClass = $('.flip');
-  console.log(flipClass.length);
   let hasWin = flipClass.length === 12;
 
   if (hasWin) {
@@ -164,7 +158,6 @@ const endGame = () => {
     .text('REJOUER')
     .css({ backgroundColor: 'var(--color-blue)', cursor: 'pointer' })
     .on('click', startGame);
-  console.log('Fin de la partie. Rejouer ?');
 };
 
 /**

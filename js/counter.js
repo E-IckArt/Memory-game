@@ -15,7 +15,6 @@ let countDown;
 /* Manage the timer and displays remaining time */
 function startCountDown() {
   interval = 90;
-  console.log(`Interval début : ${interval}`);
   // Display remaining time
   timeLeft.text(interval);
   // Set ProgressBar width
@@ -38,8 +37,6 @@ function startCountDown() {
         endGame(); // Function in file memory.js
         displayGameLosedMsg();
       }, 900);
-
-      console.log(`Interval fin : ${interval}`);
     }
   }, 1000);
 }
