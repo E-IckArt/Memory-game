@@ -138,7 +138,7 @@ const endGame = () => {
   });
 
   btnStart.textContent = 'REJOUER';
-  btnStart.style.backgroundColor = '#78a4e3';
+  btnStart.style.backgroundColor = 'var(--color-blue)';
   btnStart.addEventListener('click', startGame);
   console.log('Fin de la partie. Rejouer ?');
 };
