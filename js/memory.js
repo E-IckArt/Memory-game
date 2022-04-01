@@ -1,7 +1,3 @@
-/**
- * START : VARIABLES
- **/
-
 /** START : VARIABLES FOR MEMORY GAME**/
 
 // select start Button
@@ -23,10 +19,6 @@ let firstCard;
 let secondCard;
 
 /** STOP : VARIABLES FOR MEMORY GAME**/
-
-/**
- *STOP : VARIABLES
- **/
 
 /*
   *
@@ -54,18 +46,15 @@ function startGame() {
     $(this).on('click', flipCards);
   });
 }
+/**
+ * STOP : MAIN FUNCTION
+ **/
 
-/*
-  *
-  STOP : MAIN FUNCTION
-  *
-  */
+/**
+ * START: MEMORY BOARD's FUNCTIONS
+ **/
 
-/*
-  *
-  START : FUNCTIONS FOR CARDS EFFETS
-  *
-  */
+/*** * START : FUNCTIONS FOR CARDS EFFETS * **/
 
 /** Generate a randow number for each card. Then order card by increasing order.*/
 
@@ -135,11 +124,7 @@ function resetBoard() {
   [firstCard, secondCard] = [null, null];
 }
 
-/*
-  *
-  STOP : FUNCTIONS FOR CARDS EFFETS
-  *
-  */
+/*** * STOP : FUNCTIONS FOR CARDS EFFETS * **/
 
 function checkForWin() {
   // Select all flipped cards and stocks them in a variable, as a list.
@@ -160,6 +145,14 @@ function checkForWin() {
   }
 }
 
+function displayGameLosedMsg() {
+  displayTimer.css('display', 'none');
+  displayEndGameMessage.css('display', 'block');
+  endGameMessage
+    .text('OH NON ! TU AS PERDU !')
+    .css('color', 'rgba(148, 6, 6, 1)');
+}
+
 const endGame = () => {
   cards.each(function (card) {
     $(this).off('click', flipCards);
@@ -175,8 +168,6 @@ const endGame = () => {
   console.log('Fin de la partie. Rejouer ?');
 };
 
-/*
-  *
-  STOP : FUNCTIONS FOR MEMORY BOARD
-  *
-  */
+/**
+ * STOP : MEMORY BOARD's FUNCTIONS
+ **/

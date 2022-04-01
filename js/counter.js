@@ -1,4 +1,4 @@
-/** START : VARIABLES FOR TIMER **/
+/** START : TIMER's VARIABLES **/
 
 const timeLeft = $('.timeLeft');
 const progressBar = $('.progress-inner');
@@ -6,13 +6,11 @@ const progressBar = $('.progress-inner');
 let interval;
 let countDown;
 
-/**STOP : VARIABLES FOR TIMER**/
+/**STOP : TIMER's VARIABLES **/
 
-/*
-  *
-   START : FUNCTIONS FOR TIMER
-  *
-  */
+/**
+ * START : TIMER's FUNCTIONS
+ **/
 
 /* Manage the timer and displays remaining time */
 function startCountDown() {
@@ -46,16 +44,6 @@ function startCountDown() {
   }, 1000);
 }
 
-/*
-  *
-   STOP : FUNCTIONS FOR TIMER
-  *
-  */
-
-function displayGameLosedMsg() {
-  displayTimer.css('display', 'none');
-  displayEndGameMessage.css('display', 'block');
-  endGameMessage
-    .text('OH NON ! TU AS PERDU !')
-    .css('color', 'rgba(148, 6, 6, 1)');
-}
+/**
+ * STOP: TIMER's FUNCTIONS
+ **/
