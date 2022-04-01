@@ -1,91 +1,25 @@
 $(function ($) {
-  /*
-   *
-   * START GAMEPLAY FUNCTION
-   *
-   */
+  /*** START CALL FUNCTION ***/
 
   $('.btn-start').on('click', startGame);
 
-  /*
-   *
-   * STOP GAMEPLAY FUNCTION
-   *
-   */
+  /*** STOP CALL FUNCTION ***/
 
-  /*
-  *
-   START : VARIABLES FOR TIMER
-  *
-  */
+  /**
+   * START : VARIABLES
+   **/
+
+  /** START : VARIABLES FOR TIMER **/
 
   const timeLeft = $('.timeLeft');
   const progressBar = $('.progress-inner');
 
   let interval;
   let countDown;
-  /*
-  *
-   STOP : VARIABLES FOR TIMER
-  *
-  */
 
-  /*
-  *
-   START : FUNCTIONS FOR TIMER
-  *
-  */
+  /**STOP : VARIABLES FOR TIMER**/
 
-  /* Manage the timer and displays remaining time */
-  function startCountDown() {
-    interval = 10;
-    console.log(`Interval début : ${interval}`);
-
-    $('.timeLeft').text(interval);
-    $('.progress-inner').css('width', '100%');
-    // Set animation duration
-    $('.progress-inner').css('animationDuration', `${interval}s`);
-    // Start CSS Animation
-    $('.progress-inner').addClass('animate');
-
-    countDown = setInterval(() => {
-      interval--;
-
-      if (interval > 0) {
-        $('.timeLeft').text(interval);
-      } else {
-        clearInterval(countDown);
-        $('.timeLeft').text(0);
-        $('.progress-inner').removeClass('animate');
-        setTimeout(() => {
-          endGame(); // Function in file memory.js
-          displayGameLosedMsg();
-        }, 600);
-
-        console.log(`Interval fin : ${interval}`);
-      }
-    }, 1000);
-  }
-
-  /*
-  *
-   STOP : FUNCTIONS FOR TIMER
-  *
-  */
-
-  function displayGameLosedMsg() {
-    displayTimer.css('display', 'none');
-    displayEndGameMessage.css('display', 'block');
-    endGameMessage
-      .text('OH NON ! TU AS PERDU !')
-      .css('color', 'rgba(148, 6, 6, 1)');
-  }
-
-  /*
-  *
-   START : VARIABLES FOR MEMORY GAME
-  *
-  */
+  /** START : VARIABLES FOR MEMORY GAME**/
 
   // select start Button
   const btnStart = $('.btn-start');
@@ -105,22 +39,24 @@ $(function ($) {
   let firstCard;
   let secondCard;
 
+  /** STOP : VARIABLES FOR MEMORY GAME**/
+
+  /**
+   *STOP : VARIABLES
+   **/
+
   /*
   *
-   START : VARIABLES FOR MEMORY GAME
+  START : MAIN FUNCTION
   *
   */
 
-  /*
-*
- START : FUNCTIONS FOR CARDS EFFETS
-*
-*/
   function startGame() {
     // Disable Start Button
-    $('.btn-start').off('click', startGame);
-    btnStart.css('backgroundColor', 'var(--grey-button)');
-    btnStart.css('cursor', 'not-allowed');
+    btnStart.off('click', startGame).css({
+      backgroundColor: 'var(--grey-button)',
+      cursor: 'not-allowed',
+    });
     // Change displayed message
     displayGreeting.css('display', 'none');
     displayTimer.css('display', 'block');
@@ -132,12 +68,23 @@ $(function ($) {
     console.log("c'est parti !");
     // For each card of the cards list, flip the card
     cards.each(function () {
-      $(this).click(flipCards);
+      $(this).on('click', flipCards);
     });
   }
 
-  /**
-Generate a randow number for each card. Then order card by increasing order.*/
+  /*
+  *
+  STOP : MAIN FUNCTION
+  *
+  */
+
+  /*
+  *
+  START : FUNCTIONS FOR CARDS EFFETS
+  *
+  */
+
+  /** Generate a randow number for each card. Then order card by increasing order.*/
 
   function shuffle() {
     cards.each(function () {
@@ -205,6 +152,12 @@ Generate a randow number for each card. Then order card by increasing order.*/
     [firstCard, secondCard] = [null, null];
   }
 
+  /*
+  *
+  STOP : FUNCTIONS FOR CARDS EFFETS
+  *
+  */
+
   function checkForWin() {
     // Select all flipped cards and stocks them in a variable, as a list.
     let flipClass = $('.flip');
@@ -232,15 +185,68 @@ Generate a randow number for each card. Then order card by increasing order.*/
       }, 2000);
     });
 
-    btnStart.text('REJOUER').css('backgroundColor', 'var(--color-blue)');
-    btnStart.css('cursor', 'pointer');
-    btnStart.on('click', startGame);
+    btnStart
+      .text('REJOUER')
+      .css({ backgroundColor: 'var(--color-blue)', cursor: 'pointer' })
+      .on('click', startGame);
     console.log('Fin de la partie. Rejouer ?');
   };
 
   /*
-*
- STOP : FUNCTIONS FOR CARDS EFFETS
-*
-*/
+  *
+  STOP : FUNCTIONS FOR MEMORY BOARD
+  *
+  */
+
+  /*
+  *
+   START : FUNCTIONS FOR TIMER
+  *
+  */
+
+  /* Manage the timer and displays remaining time */
+  function startCountDown() {
+    interval = 10;
+    console.log(`Interval début : ${interval}`);
+    // Display remaining time
+    timeLeft.text(interval);
+    // Set ProgressBar width
+    $('.progress-inner').css('width', '100%');
+    // Set animation duration
+    $('.progress-inner').css('animationDuration', `${interval}s`);
+    // Start CSS Animation
+    $('.progress-inner').addClass('animate');
+
+    countDown = setInterval(() => {
+      interval--;
+
+      if (interval > 0) {
+        timeLeft.text(interval);
+      } else {
+        clearInterval(countDown);
+        timeLeft.text(0);
+        $('.progress-inner').removeClass('animate');
+        setTimeout(() => {
+          endGame(); // Function in file memory.js
+          displayGameLosedMsg();
+        }, 900);
+
+        console.log(`Interval fin : ${interval}`);
+      }
+    }, 1000);
+  }
+
+  /*
+  *
+   STOP : FUNCTIONS FOR TIMER
+  *
+  */
+
+  function displayGameLosedMsg() {
+    displayTimer.css('display', 'none');
+    displayEndGameMessage.css('display', 'block');
+    endGameMessage
+      .text('OH NON ! TU AS PERDU !')
+      .css('color', 'rgba(148, 6, 6, 1)');
+  }
 });
