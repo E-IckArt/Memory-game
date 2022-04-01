@@ -44,14 +44,6 @@ body {
   align-items: center;
 }
 
-@media screen and (min-width: 1440px) {
-  .my-header {
-    margin-top: 50px;
-    height: 20%;
-    justify-content: space-evenly;
-  }
-}
-
 .my-header--greeting {
   font-size: medium;
   text-align: center;
@@ -84,50 +76,9 @@ CountDown Container Style
   text-align: center;
 }
 
-@media screen and (min-width: 768px) {
-  .my-header {
-    width: 70%;
-  }
-
-  .my-header--greeting,
-  .container--countdown {
-    height: 84px;
-  }
-
-  .container__div--p {
-    font-size: 1.5rem;
-  }
-}
-
-@media screen and (min-width: 2560px) {
-  .my-header {
-    width: 70%;
-  }
-
-  .container__div {
-    margin-bottom: 2rem;
-  }
-
-  .container__div--p {
-    font-size: 3.5rem;
-  }
-}
-
 .container__div--icon {
   height: 30px;
   width: auto;
-}
-
-@media screen and (min-width: 1024px) {
-  .container__div--icon {
-    height: 40px;
-  }
-}
-
-@media screen and (min-width: 2560px) {
-  .container__div--icon {
-    height: 90px;
-  }
 }
 
 /*
@@ -152,18 +103,6 @@ CountDown Container Style
     rgba(33, 167, 8, 1) 100%
   );
   position: relative;
-}
-
-@media screen and (min-width: 2560px) {
-  .progress,
-  .progress-inner {
-    border-radius: 20px !important;
-  }
-
-  .progress {
-    height: 40px;
-    border: solid 3px #f5f5f5;
-  }
 }
 
 .progress-inner {
@@ -214,12 +153,6 @@ CountDown Container Style
   display: none;
 }
 
-@media screen and (min-width: 768px) {
-  .container--endgame-message {
-    height: 84px;
-  }
-}
-
 /* 
 * STOP : EndGame Message
 */
@@ -241,20 +174,6 @@ CountDown Container Style
   cursor: pointer;
 }
 
-/* @media screen and (min-width: 1024px) {
-  .btn-start {
-    min-width: 25%;
-  }
-} */
-
-@media screen and (min-width: 2560px) {
-  .btn-start {
-    font-size: 3rem;
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-}
-
 /* 
 *
 * STOP : Button Style
@@ -271,12 +190,6 @@ CountDown Container Style
   height: 100%;
 }
 
-@media screen and (min-width: 1440px) {
-  .my-main {
-    height: 80%;
-  }
-}
-
 .container--memory-grid {
   width: 90%;
   height: 100%;
@@ -286,12 +199,6 @@ CountDown Container Style
   justify-content: center;
 }
 
-@media screen and (min-width: 768px) {
-  .container--memory-grid {
-    width: 60%;
-  }
-}
-
 .memory-game {
   width: 100%;
   height: 90%;
@@ -299,26 +206,6 @@ CountDown Container Style
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
-}
-
-@media screen and (min-width: 1440px) {
-  .memory-game {
-    width: 600px;
-    height: 530px;
-    margin: 0 auto;
-  }
-}
-
-@media screen and (min-width: 2560px) {
-  .container--memory-grid {
-    width: 70%;
-  }
-
-  .memory-game {
-    width: 1100px;
-    height: 1100px;
-    margin: 0 auto;
-  }
 }
 
 /*
@@ -363,20 +250,6 @@ START : Memory Cards
   border-radius: 5px;
   backface-visibility: hidden;
   cursor: pointer;
-}
-
-@media screen and (min-width: 425px) {
-  .front-face,
-  .back-face {
-    padding: 10px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .front-face,
-  .back-face {
-    padding: 20px;
-  }
 }
 
 .front-face {
@@ -426,13 +299,117 @@ START : Footer
   list-style-type: none;
 }
 
+/*
+*
+******************** MEDIA QUERIES ***********************
+*
+*/
+@media screen and (min-width: 425px) {
+  .front-face,
+  .back-face {
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .my-header {
+    width: 70%;
+  }
+
+  .my-header--greeting,
+  .container--countdown {
+    height: 84px;
+  }
+
+  .container__div--p {
+    font-size: 1.5rem;
+  }
+
+  .container--endgame-message {
+    height: 84px;
+  }
+
+  .container--memory-grid {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container__div--icon {
+    height: 40px;
+  }
+
+  .front-face,
+  .back-face {
+    padding: 20px;
+  }
+}
+
 @media screen and (min-width: 1440px) {
+  .my-header {
+    margin-top: 50px;
+    height: 20%;
+    justify-content: space-evenly;
+  }
+
+  .my-main {
+    height: 80%;
+  }
+
+  .memory-game {
+    width: 600px;
+    height: 530px;
+    margin: 0 auto;
+  }
+
   .my-footer {
     font-size: 1rem;
   }
 }
 
 @media screen and (min-width: 2560px) {
+  .my-header {
+    width: 70%;
+  }
+
+  .container__div {
+    margin-bottom: 2rem;
+  }
+
+  .container__div--p {
+    font-size: 3.5rem;
+  }
+
+  .container__div--icon {
+    height: 90px;
+  }
+
+  .progress,
+  .progress-inner {
+    border-radius: 20px !important;
+  }
+
+  .progress {
+    height: 40px;
+    border: solid 3px #f5f5f5;
+  }
+
+  .btn-start {
+    font-size: 3rem;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .container--memory-grid {
+    width: 70%;
+  }
+
+  .memory-game {
+    width: 1100px;
+    height: 1100px;
+    margin: 0 auto;
+  }
+
   .my-footer {
     font-size: 1.5rem;
   }
