@@ -48,7 +48,6 @@ body {
   font-size: medium;
   text-align: center;
   padding-bottom: 5px;
-  /* display: none; */
 }
 
 /* 
@@ -119,7 +118,6 @@ CountDown Container Style
 
 .progress-inner.animate {
   animation-timing-function: linear;
-  /* animation-duration: 20s; */
   animation-name: countdown;
   animation-iteration-count: 1;
   animation-direction: normal;
@@ -281,7 +279,6 @@ START : Footer
 .my-footer {
   font-size: 1rem;
   font-weight: 400;
-  /* background-color: rgba(255, 255, 255, 0.7); */
   border-radius: 15px;
 }
 
