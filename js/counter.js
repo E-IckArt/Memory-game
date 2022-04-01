@@ -12,7 +12,7 @@ let countDown;
 
 /* Manage the timer and displays remaining time */
 function startCountDown() {
-  interval = 40;
+  interval = 90;
   console.log(`Interval début : ${interval}`);
 
   timeLeft.textContent = interval;
