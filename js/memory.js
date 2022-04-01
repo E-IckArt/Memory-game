@@ -133,15 +133,14 @@ function checkForWin() {
   let hasWin = flipClass.length === 12;
 
   if (hasWin) {
+    progressBar.removeClass('animate');
     setTimeout(() => {
       clearInterval(countDown);
       displayTimer.css('display', 'none');
       displayEndGameMessage.css('display', 'block');
-      endGameMessage.text(winningMessage);
-      endGameMessage.css('color', 'rgba(33, 167, 8, 1)');
+      endGameMessage.text(winningMessage).css('color', 'rgba(33, 167, 8, 1)');
+      endGame();
     }, 1000);
-    progressBar.removeClass('animate');
-    endGame();
   }
 }
 
