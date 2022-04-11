@@ -17,10 +17,11 @@ function startCountDown() {
   interval = 90;
   // Display remaining time
   timeLeft.text(interval);
-  // Set ProgressBar width
-  $('.progress-inner').css('width', '100%');
-  // Set animation duration
-  $('.progress-inner').css('animationDuration', `${interval}s`);
+  // Set ProgressBar width and animation duration
+  $('.progress-inner').css({
+    width: '100%',
+    animationDuration: `${interval}s`,
+  });
   // Start CSS Animation
   $('.progress-inner').addClass('animate');
 
