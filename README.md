@@ -1,10 +1,10 @@
 # Memory-game
 
-#titre Jeu du Memory
+## titre Jeu du Memory
 
 <img src="consignesDefi.png" alt="Consignes du défi"/>
 
-Technologies choisies :
+### Technologies choisies :
 
 -   HTML
 -   CSS
@@ -15,3 +15,9 @@ Technologies choisies :
 -   JSDOM v19.0.0
 -   Node JS v16.13.2
 -   Mocha v9.2.2
+
+### Pour installer les dépendances du projet après un git clone :
+
+-   Tapez :
+
+`npm install`
