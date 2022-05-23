@@ -7,7 +7,6 @@
     "description": "Web app - Memory game",
     "main": "script.js",
     "scripts": {
-        "start": "node /js/script.js",
         "test": "mocha"
     },
     "author": "E_Ickart",
