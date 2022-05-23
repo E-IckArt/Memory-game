@@ -1,10 +1,13 @@
 {
     "name": "defi-memory",
     "version": "1.0.0",
+    "engines": {
+        "node": "16.x"
+    },
     "description": "Web app - Memory game",
     "main": "script.js",
     "scripts": {
-        "start": "node",
+        "start": "node script.js",
         "test": "mocha"
     },
     "author": "E_Ickart",
